@@ -60,10 +60,8 @@ int main()
 
     bool leap = isLeapYear(birthYear);
 
-    // Get zodiac sign
     string zodiacSign = getZodiacSign(birthDay, birthMonth);
 
-    // Output results
     cout << "\nYour age: " << age << " years old" << endl;
     cout << "Hey! " << birthYear << (leap ? " is a leap year." : " is not a leap year.") << endl;
     cout << "Your Zodiac sign is: " << zodiacSign << endl;
