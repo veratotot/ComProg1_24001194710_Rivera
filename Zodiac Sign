@@ -1,0 +1,72 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+// Function to check if a year is a leap year
+bool isLeapYear(int year) {
+    if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+        return true;
+    }
+    return false;
+}
+
+// Function to calculate age
+int calculateAge(int birthYear, int currentYear) {
+    return currentYear - birthYear;
+}
+
+// Function to get the zodiac sign
+string getZodiacSign(int day, int month) {
+    if ((month == 1 && day >= 20) || (month == 2 && day <= 18)) return "Aquarius";
+    if ((month == 2 && day >= 19) || (month == 3 && day <= 20)) return "Pisces";
+    if ((month == 3 && day >= 21) || (month == 4 && day <= 19)) return "Aries";
+    if ((month == 4 && day >= 20) || (month == 5 && day <= 20)) return "Taurus";
+    if ((month == 5 && day >= 21) || (month == 6 && day <= 20)) return "Gemini";
+    if ((month == 6 && day >= 21) || (month == 7 && day <= 22)) return "Cancer";
+    if ((month == 7 && day >= 23) || (month == 8 && day <= 22)) return "Leo";
+    if ((month == 8 && day >= 23) || (month == 9 && day <= 22)) return "Virgo";
+    if ((month == 9 && day >= 23) || (month == 10 && day <= 22)) return "Libra";
+    if ((month == 10 && day >= 23) || (month == 11 && day <= 21)) return "Scorpio";
+    if ((month == 11 && day >= 22) || (month == 12 && day <= 21)) return "Sagittarius";
+    if ((month == 12 && day >= 22) || (month == 1 && day <= 19)) return "Capricorn";
+    return "Invalid date";
+}
+
+int main() 
+{
+    cout << "Hello, I am Verra !! Welcome to my first C++ application \n";
+   string name;
+   
+   cout << "Hey! What's your name? ";
+   cin >> name;
+   cout << "Good Day " << name;
+   cout << "! It's nice to meet you! \n";
+   
+    int birthYear, birthMonth, birthDay;
+    int currentYear;
+
+    cout << "When is your Birthday? \n";
+    cout << "Month: ";
+    cin >> birthMonth;
+    cout << "Day: ";
+    cin >> birthDay;
+        cout << "Year: ";
+    cin >> birthYear;
+    cout << "Current Year: ";
+    cin >> currentYear;
+
+    int age = calculateAge(birthYear, currentYear);
+
+    bool leap = isLeapYear(birthYear);
+
+    // Get zodiac sign
+    string zodiacSign = getZodiacSign(birthDay, birthMonth);
+
+    // Output results
+    cout << "\nYour age: " << age << " years old" << endl;
+    cout << "Hey! " << birthYear << (leap ? " is a leap year." : " is not a leap year.") << endl;
+    cout << "Your Zodiac sign is: " << zodiacSign << endl;
+
+    return 0;
+}
