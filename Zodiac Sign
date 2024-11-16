@@ -3,7 +3,6 @@
 
 using namespace std;
 
-// Function to check if a year is a leap year
 bool isLeapYear(int year) {
     if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
         return true;
@@ -11,12 +10,10 @@ bool isLeapYear(int year) {
     return false;
 }
 
-// Function to calculate age
 int calculateAge(int birthYear, int currentYear) {
     return currentYear - birthYear;
 }
 
-// Function to get the zodiac sign
 string getZodiacSign(int day, int month) {
     if ((month == 1 && day >= 20) || (month == 2 && day <= 18)) return "Aquarius";
     if ((month == 2 && day >= 19) || (month == 3 && day <= 20)) return "Pisces";
